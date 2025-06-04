@@ -18,6 +18,8 @@ import {
   Briefcase,
   GraduationCap,
   User,
+  Menu,
+  X,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -28,6 +30,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
@@ -47,6 +50,7 @@ export default function Portfolio() {
         const element = document.getElementById(id)
         if (element) {
           element.scrollIntoView({ behavior: "smooth" })
+          setIsMobileMenuOpen(false) // Close mobile menu after navigation
         }
       }
     }
@@ -89,7 +93,7 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement("a")
-    link.href = "/cv-santiago-suarez.pdf" // We'll need to add the PDF file
+    link.href = "/cv-santiago-suarez.pdf"
     link.download = "CV-Santiago-Suarez.pdf"
     document.body.appendChild(link)
     link.click()
@@ -141,51 +145,84 @@ export default function Portfolio() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <motion.a
-            href="#hero"
-            className="text-xl font-bold text-green-400 cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            onClick={(e) => {
-              e.preventDefault()
-              window.scrollTo({ top: 0, behavior: "smooth" })
-            }}
-          >
-            {"<Santiago />"}
-          </motion.a>
-          <div className="flex space-x-6">
-            {["Acerca de", "Habilidades", "Experiencia"].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
-                className="hover:text-green-300 transition-colors cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item}
-              </motion.a>
-            ))}
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <motion.a
+              href="#hero"
+              className="text-lg md:text-xl font-bold text-green-400 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              onClick={(e) => {
+                e.preventDefault()
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }}
+            >
+              {"<Santiago />"}
+            </motion.a>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-6">
+              {["Acerca de", "Habilidades", "Experiencia"].map((item) => (
+                <motion.a
+                  key={item}
+                  href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
+                  className="hover:text-green-300 transition-colors cursor-pointer text-sm lg:text-base"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2 text-green-400" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <motion.div
+              className="md:hidden mt-4 pb-4 border-t border-green-400/20"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+            >
+              <div className="flex flex-col space-y-4 pt-4">
+                {["Acerca de", "Habilidades", "Experiencia"].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
+                    className="text-green-400 hover:text-green-300 transition-colors cursor-pointer text-center py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center z-10">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center z-10 px-4">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
+            className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: isLoaded ? 1 : 0, x: isLoaded ? 0 : -50 }}
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-6xl lg:text-8xl font-bold mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold mb-6"
               animate={{
                 textShadow: ["0 0 10px #00ff00", "0 0 20px #00ff00", "0 0 10px #00ff00"],
               }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             >
               Hola, soy{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 block sm:inline">
                 Santiago
               </span>
               <motion.span
@@ -197,7 +234,7 @@ export default function Portfolio() {
             </motion.h1>
 
             <motion.div
-              className="text-xl mb-8 font-mono"
+              className="text-base sm:text-lg lg:text-xl mb-8 font-mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -209,12 +246,15 @@ export default function Portfolio() {
             </motion.div>
 
             <motion.div
-              className="flex space-x-4 mb-8"
+              className="flex flex-col sm:flex-row gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
             >
-              <Button asChild className="bg-green-400 text-black hover:bg-green-300 transition-all duration-300">
+              <Button
+                asChild
+                className="bg-green-400 text-black hover:bg-green-300 transition-all duration-300 w-full sm:w-auto"
+              >
                 <a href="#contacto">
                   <Terminal className="mr-2 h-4 w-4" />
                   Contactar
@@ -223,7 +263,7 @@ export default function Portfolio() {
               <Button
                 variant="outline"
                 onClick={handleDownloadCV}
-                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
+                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black w-full sm:w-auto"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Descargar CV
@@ -231,7 +271,7 @@ export default function Portfolio() {
             </motion.div>
 
             <motion.div
-              className="flex space-x-4"
+              className="flex justify-center sm:justify-start space-x-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -254,25 +294,26 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon className="h-6 w-6" />
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </motion.a>
               ))}
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative"
+            className="order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0.8 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
               <Image
                 src="/hero-bg.png"
                 alt="Santiago working on cybersecurity"
                 width={600}
                 height={400}
-                className="rounded-lg border border-green-400/30"
+                className="rounded-lg border border-green-400/30 w-full h-auto"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg" />
               <motion.div
@@ -295,7 +336,7 @@ export default function Portfolio() {
       <section id="acerca-de" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -303,7 +344,7 @@ export default function Portfolio() {
             {"<Acerca de Mí />"}
           </motion.h2>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -311,29 +352,29 @@ export default function Portfolio() {
             >
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-green-400 flex items-center">
+                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                     <User className="mr-2 h-5 w-5" />
                     Acerca de Mí
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300">
-                  <p className="mb-4">
+                  <p className="mb-4 text-sm sm:text-base">
                     Soy Analista en Sistemas y estudiante en proceso de finalizar la carrera de Ingeniería en Sistemas
                     de Información. Me considero una persona responsable y organizada, con un enfoque proactivo hacia la
                     resolución de problemas y la mejora continua.
                   </p>
-                  <p className="mb-4">
+                  <p className="mb-4 text-sm sm:text-base">
                     Mi especialización en pentesting y ciberseguridad me permite identificar vulnerabilidades y
                     fortalecer la seguridad de sistemas y aplicaciones.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="border-green-400 text-green-400">
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Pentesting
                     </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400">
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Cybersecurity
                     </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400">
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Project Management
                     </Badge>
                   </div>
@@ -348,28 +389,30 @@ export default function Portfolio() {
             >
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-green-400 flex items-center">
+                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                     <Award className="mr-2 h-5 w-5" />
                     Certificación
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <Image
                       src="/cisco-cert.png"
                       alt="Cisco Introduction to Cybersecurity Certificate"
-                      width={100}
-                      height={100}
-                      className="rounded-lg"
+                      width={80}
+                      height={80}
+                      className="rounded-lg sm:w-[100px] sm:h-[100px]"
                     />
-                    <div>
-                      <h3 className="text-lg font-semibold text-green-400">Introduction to Cybersecurity</h3>
-                      <p className="text-gray-300">Cisco Networking Academy</p>
+                    <div className="text-center sm:text-left">
+                      <h3 className="text-base sm:text-lg font-semibold text-green-400">
+                        Introduction to Cybersecurity
+                      </h3>
+                      <p className="text-gray-300 text-sm sm:text-base">Cisco Networking Academy</p>
                       <a
                         href="https://www.credly.com/badges/f44e2ed2-57f0-45df-8e94-340210e5411a/public_url"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-green-400 hover:text-green-300 flex items-center mt-2"
+                        className="text-green-400 hover:text-green-300 flex items-center justify-center sm:justify-start mt-2 text-sm sm:text-base"
                       >
                         Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
                       </a>
@@ -386,7 +429,7 @@ export default function Portfolio() {
       <section id="habilidades" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -394,7 +437,7 @@ export default function Portfolio() {
             {"<Habilidades />"}
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {Object.entries(skills).map(([category, skillList], index) => (
               <motion.div
                 key={category}
@@ -404,7 +447,7 @@ export default function Portfolio() {
               >
                 <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full">
                   <CardHeader>
-                    <CardTitle className="text-green-400 flex items-center capitalize">
+                    <CardTitle className="text-green-400 flex items-center capitalize text-lg sm:text-xl">
                       {category === "languages" && <Code className="mr-2 h-5 w-5" />}
                       {category === "frameworks" && <Server className="mr-2 h-5 w-5" />}
                       {category === "databases" && <Database className="mr-2 h-5 w-5" />}
@@ -426,7 +469,10 @@ export default function Portfolio() {
                           }}
                           whileHover={{ scale: 1.1 }}
                         >
-                          <Badge variant="outline" className="border-green-400/50 text-green-400 hover:bg-green-400/10">
+                          <Badge
+                            variant="outline"
+                            className="border-green-400/50 text-green-400 hover:bg-green-400/10 text-xs sm:text-sm"
+                          >
                             {skill}
                           </Badge>
                         </motion.div>
@@ -444,7 +490,7 @@ export default function Portfolio() {
       <section id="experiencia" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -462,23 +508,26 @@ export default function Portfolio() {
               >
                 <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
                   <CardHeader>
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       <div>
-                        <CardTitle className="text-green-400 flex items-center">
+                        <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                           <Briefcase className="mr-2 h-5 w-5" />
                           {exp.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-300 mt-1">
+                        <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
                           {exp.company} • {exp.location}
                         </CardDescription>
                       </div>
-                      <Badge variant="outline" className="border-green-400 text-green-400">
+                      <Badge
+                        variant="outline"
+                        className="border-green-400 text-green-400 text-xs sm:text-sm self-start"
+                      >
                         {exp.period}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-300">{exp.description}</p>
+                    <p className="text-gray-300 text-sm sm:text-base">{exp.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -493,7 +542,7 @@ export default function Portfolio() {
           >
             <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-green-400 flex items-center">
+                <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                   <GraduationCap className="mr-2 h-5 w-5" />
                   Educación
                 </CardTitle>
@@ -501,10 +550,12 @@ export default function Portfolio() {
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-green-400">Ingeniería en Sistemas de Información</h3>
-                    <p className="text-gray-300">Universidad de la Cuenca del Plata (UCP)</p>
-                    <p className="text-gray-400">2022 - Actualidad</p>
-                    <p className="text-sm text-gray-400 mt-2">
+                    <h3 className="text-base sm:text-lg font-semibold text-green-400">
+                      Ingeniería en Sistemas de Información
+                    </h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Universidad de la Cuenca del Plata (UCP)</p>
+                    <p className="text-gray-400 text-sm">2022 - Actualidad</p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-2">
                       Recibido como Analista Universitario en Sistemas de Información en 2024
                     </p>
                   </div>
@@ -519,7 +570,7 @@ export default function Portfolio() {
       <section id="contacto" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -534,12 +585,12 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-lg sm:text-xl text-gray-300 mb-8">
                 ¿Interesado en colaborar o necesitas servicios de pentesting? ¡Hablemos!
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   icon: Mail,
@@ -578,10 +629,10 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm hover:border-green-400 transition-all duration-300 h-full">
-                    <CardContent className="p-6 text-center">
-                      <Icon className="h-8 w-8 text-green-400 mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold text-green-400 mb-2">{label}</h3>
-                      <p className="text-gray-300 text-sm break-all">{value}</p>
+                    <CardContent className="p-4 sm:p-6 text-center">
+                      <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-green-400 mx-auto mb-4" />
+                      <h3 className="text-base sm:text-lg font-semibold text-green-400 mb-2">{label}</h3>
+                      <p className="text-gray-300 text-xs sm:text-sm break-all">{value}</p>
                     </CardContent>
                   </Card>
                 </motion.a>
@@ -595,7 +646,7 @@ export default function Portfolio() {
       <footer className="py-8 border-t border-green-400/20 relative z-10">
         <div className="container mx-auto px-4 text-center">
           <motion.p
-            className="text-gray-400"
+            className="text-gray-400 text-sm sm:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
