@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -8,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['vercel.com'],
   },
   // Asegúrate de que la ruta base coincida con tu repositorio de GitHub
   // Si tu repositorio se llama username.github.io, deja esto como ''

@@ -31,6 +31,9 @@ export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [matrixNumbers, setMatrixNumbers] = useState<string[][]>(
+    Array(20).fill(Array(20).fill("0"))
+  )
 
   useEffect(() => {
     setIsLoaded(true)
@@ -38,7 +41,18 @@ export default function Portfolio() {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
     window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
+
+    // Actualizar números Matrix
+    const interval = setInterval(() => {
+      setMatrixNumbers(prev => 
+        prev.map(col => col.map(() => Math.random() > 0.5 ? "1" : "0"))
+      )
+    }, 1000)
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+      clearInterval(interval)
+    }
   }, [])
 
   useEffect(() => {
@@ -93,8 +107,8 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement("a")
-    link.href = "/cv-santiago-suarez.pdf"
-    link.download = "CV-Santiago-Suarez.pdf"
+    link.href = "/SUAREZ JORGE SANTIAGO CV.pdf"
+    link.download = "SUAREZ JORGE SANTIAGO CV.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -130,7 +144,7 @@ export default function Portfolio() {
             >
               {Array.from({ length: 20 }).map((_, j) => (
                 <div key={j} className="mb-2">
-                  {Math.random() > 0.5 ? "1" : "0"}
+                  {matrixNumbers[i][j]}
                 </div>
               ))}
             </motion.div>
@@ -161,7 +175,7 @@ export default function Portfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              {["Acerca de", "Habilidades", "Experiencia"].map((item) => (
+              {["Acerca de mi", "Habilidades", "Experiencia"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -306,7 +320,7 @@ export default function Portfolio() {
             animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0.8 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative max-w-md mx-auto lg:max-w-none">
+            <div className="relative max-w-md mx-auto lg:max-w-none mt-20 sm:mt-0">
               <Image
                 src="/hero-bg.png"
                 alt="Santiago working on cybersecurity"
@@ -333,7 +347,7 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="acerca-de" className="py-20 relative z-10">
+      <section id="acerca-de-mi" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
@@ -426,7 +440,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="habilidades" className="py-20 relative z-10">
+      <section id="habilidades" className="py-12 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
@@ -487,7 +501,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experiencia" className="py-20 relative z-10">
+      <section id="experiencia" className="py-12 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
@@ -567,7 +581,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 relative z-10">
+      <section id="contacto" className="py-12 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
