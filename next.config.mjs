@@ -7,7 +7,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['vercel.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'vercel.com',
+      },
+    ],
   },
   // Asegúrate de que la ruta base coincida con tu repositorio de GitHub
   // Si tu repositorio se llama username.github.io, deja esto como ''
