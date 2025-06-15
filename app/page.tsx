@@ -203,7 +203,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, height: 0 }}
             >
               <div className="flex flex-col space-y-4 pt-4">
-                {["Acerca de", "Habilidades", "Experiencia"].map((item) => (
+                {["Acerca de mi", "Habilidades", "Experiencia"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -440,7 +440,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="habilidades" className="py-12 sm:py-20 relative z-10">
+      <section id="habilidades" className="pt-24 sm:pt-28 py-12 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
@@ -501,7 +501,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experiencia" className="py-12 sm:py-20 relative z-10">
+      <section id="experiencia" className="pt-24 sm:pt-28 py-12 sm:py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-12 text-center"
