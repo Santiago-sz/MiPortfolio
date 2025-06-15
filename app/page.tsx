@@ -609,8 +609,8 @@ export default function Portfolio() {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "Santi39940@gmail.com",
-                  href: "mailto:Santi39940@gmail.com",
+                  value: "santiagosuarezjss@gmail.com",
+                  href: "mailto:santiagosuarezjss@gmail.com",
                 },
                 {
                   icon: Phone,
@@ -646,7 +646,33 @@ export default function Portfolio() {
                     <CardContent className="p-4 sm:p-6 text-center">
                       <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-green-400 mx-auto mb-4" />
                       <h3 className="text-base sm:text-lg font-semibold text-green-400 mb-2">{label}</h3>
-                      <p className="text-gray-300 text-xs sm:text-sm break-all">{value}</p>
+                      {label === "Email" ? (
+                        <div className="flex flex-col items-center gap-2">
+                          <p className="text-gray-300 text-xs sm:text-sm break-all">
+                            <span>santiagosuarezjss</span>
+                            <span className="break-all">@gmail.com</span>
+                          </p>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="bg-green-400 text-black hover:bg-green-300 text-xs px-2 py-1 h-auto"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              navigator.clipboard.writeText(value);
+                              const button = e.currentTarget;
+                              const originalText = button.textContent;
+                              button.textContent = "¡Copiado!";
+                              setTimeout(() => {
+                                button.textContent = originalText;
+                              }, 2000);
+                            }}
+                          >
+                            Copiar
+                          </Button>
+                        </div>
+                      ) : (
+                        <p className="text-gray-300 text-xs sm:text-sm break-all">{value}</p>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.a>
