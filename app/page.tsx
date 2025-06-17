@@ -175,7 +175,7 @@ export default function Portfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              {["Acerca de mi", "Habilidades", "Experiencia"].map((item) => (
+              {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -203,7 +203,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, height: 0 }}
             >
               <div className="flex flex-col space-y-4 pt-4">
-                {["Acerca de mi", "Habilidades", "Experiencia"].map((item) => (
+                {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -253,10 +253,9 @@ export default function Portfolio() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
+              <div className="mb-2">{">"} Analista en Sistemas</div>
               <div className="mb-2">{">"} Pentester</div>
-              <div className="mb-2">{">"} Analista en Sistemas de Información</div>
-              <div className="mb-2">{">"} Project manager</div>
-              <div className="text-green-300">{">"} Ciberseguridad</div>
+              <div className="text-green-300">{">"} Analista de Ciberseguridad</div>
             </motion.div>
 
             <motion.div
@@ -604,19 +603,13 @@ export default function Portfolio() {
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto">
               {[
                 {
                   icon: Mail,
                   label: "Email",
                   value: "santiagosuarezjss@gmail.com",
                   href: "mailto:santiagosuarezjss@gmail.com",
-                },
-                {
-                  icon: Phone,
-                  label: "WhatsApp",
-                  value: "Enviar mensaje",
-                  href: "https://wa.me/543795066042?text=Hola%20Santiago,%20me%20interesa%20contactarte%20para%20servicios%20de%20pentesting",
                 },
                 {
                   icon: Github,
