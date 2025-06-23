@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Técnico en Hardware y Software",
       company: "Trabajo Independiente",
       location: "Autónomo / Freelance",
-      period: "2020 - 2023",
+      period: "2020 - 2025",
       description:
         "Diagnóstico y reparación de hardware. Instalación, configuración y mantenimiento de sistemas operativos y software.",
     },
@@ -349,7 +349,7 @@ export default function Portfolio() {
       <section id="acerca-de-mi" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center w-full flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -357,28 +357,24 @@ export default function Portfolio() {
             {"<Acerca de Mí />"}
           </motion.h2>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="flex flex-col gap-8 items-center w-full">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full">
                 <CardHeader>
-                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                  <CardTitle className="text-green-400 flex items-center justify-center text-center text-lg sm:text-xl">
                     <User className="mr-2 h-5 w-5" />
                     Acerca de Mí
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-gray-300">
+                <CardContent className="text-gray-300 flex flex-col items-center text-center">
                   <p className="mb-4 text-sm sm:text-base">
-                    Soy Analista en Sistemas y estudiante en proceso de finalizar la carrera de Ingeniería en Sistemas
-                    de Información. Me considero una persona responsable y organizada, con un enfoque proactivo hacia la
-                    resolución de problemas y la mejora continua.
-                  </p>
-                  <p className="mb-4 text-sm sm:text-base">
-                    Mi especialización en pentesting y ciberseguridad me permite identificar vulnerabilidades y
-                    fortalecer la seguridad de sistemas y aplicaciones.
+                    Analista en Sistemas y estudiante avanzado de Ingeniería en Sistemas de Información, con fuerte orientación a la ciberseguridad ofensiva y defensiva, especializado en pentesting, análisis de vulnerabilidades y pruebas en entornos controlados.<br/>
+                    Experiencia en liderazgo de proyectos de software y formación técnica continua.<br/>
+                    Me destaco por la capacidad de investigación, resolución de problemas y uso profesional de herramientas de hacking ético y seguridad.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
@@ -394,46 +390,71 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                    <Award className="mr-2 h-5 w-5" />
-                    Certificación
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            {/* Certificados debajo, en grid */}
+            <div className="w-full flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 w-full max-w-3xl">
+                {/* Certificado Cisco */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
                     <Image
                       src="/cisco-cert.png"
                       alt="Cisco Introduction to Cybersecurity Certificate"
-                      width={80}
-                      height={80}
-                      className="rounded-lg sm:w-[100px] sm:h-[100px]"
+                      width={60}
+                      height={60}
+                      className="rounded-lg w-[60px] h-[60px]"
                     />
-                    <div className="text-center sm:text-left">
-                      <h3 className="text-base sm:text-lg font-semibold text-green-400">
+                    <div className="text-center mt-2">
+                      <h3 className="text-base font-semibold text-green-400">
                         Introduction to Cybersecurity
                       </h3>
-                      <p className="text-gray-300 text-sm sm:text-base">Cisco Networking Academy</p>
+                      <p className="text-gray-300 text-xs">Cisco Networking Academy</p>
                       <a
                         href="https://www.credly.com/badges/f44e2ed2-57f0-45df-8e94-340210e5411a/public_url"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-green-400 hover:text-green-300 flex items-center justify-center sm:justify-start mt-2 text-sm sm:text-base"
+                        className="text-green-400 hover:text-green-300 flex items-center justify-center mt-1 text-xs"
                       >
                         Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
                       </a>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  </Card>
+                </motion.div>
+                {/* Certificado Ethical Hacker */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
+                    <Image
+                      src="/ethical-hacker.png"
+                      alt="Ethical Hacker Certificate"
+                      width={60}
+                      height={60}
+                      className="rounded-lg w-[60px] h-[60px]"
+                    />
+                    <div className="text-center mt-2">
+                      <h3 className="text-base font-semibold text-green-400">
+                        Ethical Hacker
+                      </h3>
+                      <p className="text-gray-300 text-xs">Cisco Networking Academy</p>
+                      <a
+                        href="https://www.credly.com/badges/dc843dfa-c7bd-4772-96d6-a82d1c7a1731/public_url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-400 hover:text-green-300 flex items-center justify-center mt-1 text-xs"
+                      >
+                        Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
+                      </a>
+                    </div>
+                  </Card>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -450,7 +471,7 @@ export default function Portfolio() {
             {"<Habilidades />"}
           </motion.h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-center">
             {Object.entries(skills).map(([category, skillList], index) => (
               <motion.div
                 key={category}
@@ -458,7 +479,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full">
+                <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full items-center flex flex-col">
                   <CardHeader>
                     <CardTitle className="text-green-400 flex items-center capitalize text-lg sm:text-xl">
                       {category === "languages" && <Code className="mr-2 h-5 w-5" />}
@@ -511,7 +532,7 @@ export default function Portfolio() {
             {"<Experiencia />"}
           </motion.h2>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
@@ -553,12 +574,20 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                  <GraduationCap className="mr-2 h-5 w-5" />
-                  Educación
-                </CardTitle>
+            <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm items-center w-full max-w-3xl mx-auto p-6">
+              <CardHeader className="flex flex-row items-start justify-between w-full p-0">
+                <div className="flex items-center">
+                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                    <GraduationCap className="mr-2 h-5 w-5" />
+                    Educación
+                  </CardTitle>
+                </div>
+                <Badge
+                  variant="outline"
+                  className="border-green-400 text-green-400 text-xs sm:text-sm self-start mt-1"
+                >
+                  2022 - Actualidad
+                </Badge>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -567,9 +596,8 @@ export default function Portfolio() {
                       Ingeniería en Sistemas de Información
                     </h3>
                     <p className="text-gray-300 text-sm sm:text-base">Universidad de la Cuenca del Plata (UCP)</p>
-                    <p className="text-gray-400 text-sm">2022 - Actualidad</p>
                     <p className="text-xs sm:text-sm text-gray-400 mt-2">
-                      Recibido como Analista Universitario en Sistemas de Información en 2024
+                      Recibido como Analista en Sistemas de Información en 2024
                     </p>
                   </div>
                 </div>
