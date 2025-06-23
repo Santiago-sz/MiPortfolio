@@ -102,6 +102,15 @@ export default function Portfolio() {
       description:
         "Diagnóstico y reparación de hardware. Instalación, configuración y mantenimiento de sistemas operativos y software.",
     },
+    {
+      title: "Educación",
+      company: "Universidad de la Cuenca del Plata (UCP)",
+      location: "Corrientes, Argentina",
+      period: "2022 - Actualidad",
+      description:
+        "Ingeniería en Sistemas. Recibido como Analista en Sistemas de Información en 2024.",
+      extra: true,
+    },
   ]
 
   const handleDownloadCV = () => {
@@ -278,7 +287,7 @@ export default function Portfolio() {
                 variant="outline"
                 className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black w-full sm:w-auto"
               >
-                <a href="/SUAREZ JORGE SANTIAGO CV.pdf" download>
+                <a href="/SUAREZ JORGE SANTIAGO.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Descargar CV
                 </a>
@@ -569,43 +578,6 @@ export default function Portfolio() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            className="mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm items-center w-full max-w-3xl mx-auto p-6">
-              <CardHeader className="flex flex-row items-start justify-between w-full p-0">
-                <div className="flex items-center">
-                  <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                    <GraduationCap className="mr-2 h-5 w-5" />
-                    Educación
-                  </CardTitle>
-                </div>
-                <Badge
-                  variant="outline"
-                  className="border-green-400 text-green-400 text-xs sm:text-sm self-start mt-1"
-                >
-                  2022 - Actualidad
-                </Badge>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-green-400">
-                      Ingeniería en Sistemas de Información
-                    </h3>
-                    <p className="text-gray-300 text-sm sm:text-base">Universidad de la Cuenca del Plata (UCP)</p>
-                    <p className="text-xs sm:text-sm text-gray-400 mt-2">
-                      Recibido como Analista en Sistemas de Información en 2024
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
       </section>
 
