@@ -274,12 +274,14 @@ export default function Portfolio() {
                 </a>
               </Button>
               <Button
+                asChild
                 variant="outline"
-                onClick={handleDownloadCV}
                 className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black w-full sm:w-auto"
               >
-                <Download className="mr-2 h-4 w-4" />
-                Descargar CV
+                <a href="/SUAREZ JORGE SANTIAGO CV.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Descargar CV
+                </a>
               </Button>
             </motion.div>
 
