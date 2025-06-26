@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Técnico en Hardware y Software",
       company: "Trabajo Independiente",
       location: "Autónomo / Freelance",
-      period: "2020 - 2025",
+      period: "2020 - 2024",
       description:
         "Diagnóstico y reparación de hardware. Instalación, configuración y mantenimiento de sistemas operativos y software.",
     },
