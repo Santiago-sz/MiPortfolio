@@ -90,7 +90,7 @@ export default function Portfolio() {
       title: "Project Manager",
       company: "Quadracode",
       location: "Corrientes, Argentina",
-      period: "03/2025 – Actualidad",
+      period: "2025 – Actualidad",
       description:
         "Lidero proyectos de desarrollo de software a medida, coordinando equipos multidisciplinarios y aplicando metodologías ágiles (Scrum/Kanban).",
     },
@@ -264,6 +264,7 @@ export default function Portfolio() {
             >
               <div className="mb-2">{">"} Analista en Sistemas</div>
               <div className="mb-2">{">"} Pentester</div>
+              <div className="mb-2">{">"} Analista Soc</div>
               <div className="text-green-300">{">"} Analista de Ciberseguridad</div>
             </motion.div>
 
@@ -305,7 +306,7 @@ export default function Portfolio() {
                 { icon: Linkedin, href: "https://www.linkedin.com/in/jorge-santiago-suarez-ctes", label: "LinkedIn" },
                 {
                   icon: Award,
-                  href: "https://www.credly.com/badges/f44e2ed2-57f0-45df-8e94-340210e5411a/public_url",
+                  href: "https://www.credly.com/users/jorge-santiago-suarez/badges#credly",
                   label: "Credly",
                 },
               ].map(({ icon: Icon, href, label }) => (
@@ -643,9 +644,8 @@ export default function Portfolio() {
                       <h3 className="text-base sm:text-lg font-semibold text-green-400 mb-2">{label}</h3>
                       {label === "Email" ? (
                         <div className="flex flex-col items-center gap-2">
-                          <p className="text-gray-300 text-xs sm:text-sm break-all">
-                            <span>santiagosuarezjss</span>
-                            <span className="break-all">@gmail.com</span>
+                          <p className="text-gray-300 text-xs sm:text-sm whitespace-nowrap overflow-x-auto">
+                            santiagosuarezjss@gmail.com
                           </p>
                           <Button
                             variant="outline"
