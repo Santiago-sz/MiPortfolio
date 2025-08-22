@@ -87,6 +87,14 @@ export default function Portfolio() {
 
   const experience = [
     {
+      title: "Analista de Ciberseguridad",
+      company: "Universidad Nacional del Nordeste",
+      location: "Corrientes, Argentina",
+      period: "Jul. 2025 – Actualidad",
+      description:
+        "Gestión de riesgos, políticas y medidas técnicas para proteger sistemas e información institucional.",
+    },
+    {
       title: "Project Manager",
       company: "Quadracode",
       location: "Corrientes, Argentina",
@@ -384,13 +392,15 @@ export default function Portfolio() {
                 </CardHeader>
                 <CardContent className="text-gray-300 flex flex-col items-center text-center">
                   <p className="mb-4 text-sm sm:text-base">
-                    Analista en Sistemas y estudiante avanzado de Ingeniería en Sistemas de Información, con fuerte orientación a la ciberseguridad ofensiva y defensiva, especializado en pentesting, análisis de vulnerabilidades y pruebas en entornos controlados.<br/>
-                    Experiencia en liderazgo de proyectos de software y formación técnica continua.<br/>
-                    Me destaco por la capacidad de investigación, resolución de problemas y uso profesional de herramientas de hacking ético y seguridad.
+                    Analista en Sistemas y estudiante avanzado de Ingeniería en Sistemas de Información, con enfoque en ciberseguridad ofensiva y defensiva. Especializado en pentesting, análisis de vulnerabilidades y pruebas en entornos controlados, con interés particular en tareas de Blue Team (defensa, monitoreo y respuesta a incidentes).<br/><br/>
+                    Cuento con experiencia en liderazgo de proyectos de software y me destaco por la capacidad de investigación, resolución de problemas y el manejo profesional de herramientas de hacking ético y seguridad.
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Pentesting
+                    </Badge>
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                      Blue Team & Defensive Security
                     </Badge>
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Cybersecurity
