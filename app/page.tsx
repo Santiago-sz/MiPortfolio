@@ -124,8 +124,8 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement("a")
-    link.href = "/SUAREZ JORGE SANTIAGO CV.pdf"
-    link.download = "SUAREZ JORGE SANTIAGO CV.pdf"
+    link.href = "/CV_Jorge_Santiago_Suarez.pdf"
+    link.download = "CV_Jorge_Santiago_Suarez.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -271,7 +271,7 @@ export default function Portfolio() {
               transition={{ delay: 0.5, duration: 0.8 }}
             >
               <div className="mb-2">{">"} Analista en Sistemas</div>
-              <div className="mb-2">{">"} Pentester</div>
+              <div className="mb-2">{">"} DevOpSec</div>
               <div className="mb-2">{">"} Analista Soc</div>
               <div className="text-green-300">{">"} Analista de Ciberseguridad</div>
             </motion.div>
