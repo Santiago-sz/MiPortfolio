@@ -391,24 +391,23 @@ export default function Portfolio() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300 flex flex-col items-center text-center">
-                  <p className="mb-4 text-sm sm:text-base">
-                    Analista en Sistemas y estudiante avanzado de Ingeniería en Sistemas de Información, con enfoque en ciberseguridad ofensiva y defensiva. Especializado en pentesting, análisis de vulnerabilidades y pruebas en entornos controlados, con interés particular en tareas de Blue Team (defensa, monitoreo y respuesta a incidentes).<br/><br/>
-                    Cuento con experiencia en liderazgo de proyectos de software y me destaco por la capacidad de investigación, resolución de problemas y el manejo profesional de herramientas de hacking ético y seguridad.
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Pentesting
-                    </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Blue Team & Defensive Security
-                    </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Cybersecurity
-                    </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Project Management
-                    </Badge>
-                  </div>
+<p className="mb-4 text-sm sm:text-base">
+                                    Analista en Sistemas y futuro Ingeniero orientado a la ciberseguridad y la optimización inteligente de procesos. Experto en integrar seguridad desde el diseño (Security by Design) utilizando marcos internacionales como NIST y OWASP. Cuento con una trayectoria híbrida en desarrollo de software y automatizaciones avanzadas con IA, transformando infraestructuras críticas en sistemas eficientes, seguros y escalables.
+                                  </p>
+                                  <div className="flex flex-wrap gap-2 justify-center">
+                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                                      DevOpSec
+                                    </Badge>
+                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                                      IA y Automatización
+                                    </Badge>
+                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                                      Cybersecurity
+                                    </Badge>
+                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                                      Project Management
+                                    </Badge>
+                                  </div>
                 </CardContent>
               </Card>
             </motion.div>
