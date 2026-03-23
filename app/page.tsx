@@ -44,7 +44,7 @@ export default function Portfolio() {
 
     // Actualizar números Matrix
     const interval = setInterval(() => {
-      setMatrixNumbers(prev => 
+      setMatrixNumbers(prev =>
         prev.map(col => col.map(() => Math.random() > 0.5 ? "1" : "0"))
       )
     }, 1000)
@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Project Manager",
       company: "Quadracode",
       location: "Corrientes, Argentina",
-      period: "Ene de 2025 – Nov de 2025",
+      period: "Ene 2025 – Nov 2025",
       description:
         "Lidero proyectos de desarrollo de software a medida, coordinando equipos multidisciplinarios y aplicando metodologías ágiles (Scrum/Kanban).",
     },
@@ -391,23 +391,23 @@ export default function Portfolio() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300 flex flex-col items-center text-center">
-<p className="mb-4 text-sm sm:text-base">
-                                    Analista en Sistemas y futuro Ingeniero orientado a la ciberseguridad y la optimización inteligente de procesos. Experto en integrar seguridad desde el diseño (Security by Design) utilizando marcos internacionales como NIST y OWASP. Cuento con una trayectoria híbrida en desarrollo de software y automatizaciones avanzadas con IA, transformando infraestructuras críticas en sistemas eficientes, seguros y escalables.
-                                  </p>
-                                  <div className="flex flex-wrap gap-2 justify-center">
-                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                                      DevOpSec
-                                    </Badge>
-                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                                      IA y Automatización
-                                    </Badge>
-                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                                      Cybersecurity
-                                    </Badge>
-                                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                                      Project Management
-                                    </Badge>
-                                  </div>
+                  <p className="mb-4 text-sm sm:text-base">
+                    Analista en Sistemas y futuro Ingeniero orientado a la ciberseguridad y la optimización inteligente de procesos. Experto en integrar seguridad desde el diseño (Security by Design) utilizando marcos internacionales como NIST y OWASP. Cuento con una trayectoria híbrida en desarrollo de software y automatizaciones avanzadas con IA, transformando infraestructuras críticas en sistemas eficientes, seguros y escalables.
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                      DevOpSec
+                    </Badge>
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                      IA y Automatización
+                    </Badge>
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                      Cybersecurity
+                    </Badge>
+                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
+                      Project Management
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
