@@ -81,7 +81,7 @@ export default function Portfolio() {
     languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "PHP", "SQL"],
     frameworks: ["Node.js", "FastAPI", "Playwright", "Docker"],
     databases: ["MySQL", "PostgreSQL", "MongoDB"],
-    security: ["Metasploit", "Burp Suite", "Aircrack-ng", "Kali Linux", "Nmap", "Wifite"],
+    security: ["Metasploit", "Burp Suite", "Aircrack-ng", "Kali Linux", "Nmap", "Wifite", "Fortinet", "Pila ELK"],
     tools: ["GitHub", "GitLab", "Vercel", "Trello", "Notion", "SonarQube"],
   }
 
