@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Project Manager",
       company: "Quadracode",
       location: "Corrientes, Argentina",
-      period: "2025 – Actualidad",
+      period: "Ene de 2025 – Nov de 2025",
       description:
         "Lidero proyectos de desarrollo de software a medida, coordinando equipos multidisciplinarios y aplicando metodologías ágiles (Scrum/Kanban).",
     },
