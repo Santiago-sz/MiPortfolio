@@ -413,7 +413,7 @@ export default function Portfolio() {
             </motion.div>
             {/* Certificados debajo, en grid */}
             <div className="w-full flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 w-full max-w-3xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 w-full max-w-4xl">
                 {/* Certificado Cisco */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -471,6 +471,28 @@ export default function Portfolio() {
                       >
                         Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
                       </a>
+                    </div>
+                  </Card>
+                </motion.div>
+                {/* Certificado FortiGate */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
+                    <Image
+                      src="/fortigate-cert.jpg"
+                      alt="FortiGate 7.6 Operator Certificate"
+                      width={60}
+                      height={60}
+                      className="rounded-lg w-[60px] h-[60px]"
+                    />
+                    <div className="text-center mt-2">
+                      <h3 className="text-base font-semibold text-green-400">
+                        FortiGate 7.6 Operator
+                      </h3>
+                      <p className="text-gray-300 text-xs">Fortinet Training Institute</p>
                     </div>
                   </Card>
                 </motion.div>
