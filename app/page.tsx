@@ -44,7 +44,7 @@ export default function Portfolio() {
 
     // Actualizar números Matrix
     const interval = setInterval(() => {
-      setMatrixNumbers(prev => 
+      setMatrixNumbers(prev =>
         prev.map(col => col.map(() => Math.random() > 0.5 ? "1" : "0"))
       )
     }, 1000)
@@ -78,10 +78,10 @@ export default function Portfolio() {
   }, [])
 
   const skills = {
-    languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "PHP", "SQL"],
+    languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "SQL"],
     frameworks: ["Node.js", "FastAPI", "Playwright", "Docker"],
     databases: ["MySQL", "PostgreSQL", "MongoDB"],
-    security: ["Metasploit", "Burp Suite", "Aircrack-ng", "Kali Linux", "Nmap", "Wifite"],
+    security: ["Metasploit", "Burp Suite", "Aircrack-ng", "Kali Linux", "Nmap", "Wifite", "Fortinet", "Pila ELK"],
     tools: ["GitHub", "GitLab", "Vercel", "Trello", "Notion", "SonarQube"],
   }
 
@@ -98,7 +98,7 @@ export default function Portfolio() {
       title: "Project Manager",
       company: "Quadracode",
       location: "Corrientes, Argentina",
-      period: "2025 – Actualidad",
+      period: "Ene 2025 – Nov 2025",
       description:
         "Lidero proyectos de desarrollo de software a medida, coordinando equipos multidisciplinarios y aplicando metodologías ágiles (Scrum/Kanban).",
     },
@@ -392,15 +392,14 @@ export default function Portfolio() {
                 </CardHeader>
                 <CardContent className="text-gray-300 flex flex-col items-center text-center">
                   <p className="mb-4 text-sm sm:text-base">
-                    Analista en Sistemas y estudiante avanzado de Ingeniería en Sistemas de Información, con enfoque en ciberseguridad ofensiva y defensiva. Especializado en pentesting, análisis de vulnerabilidades y pruebas en entornos controlados, con interés particular en tareas de Blue Team (defensa, monitoreo y respuesta a incidentes).<br/><br/>
-                    Cuento con experiencia en liderazgo de proyectos de software y me destaco por la capacidad de investigación, resolución de problemas y el manejo profesional de herramientas de hacking ético y seguridad.
+                    Analista en Sistemas y futuro Ingeniero orientado a la ciberseguridad y la optimización inteligente de procesos. Experto en integrar seguridad desde el diseño (Security by Design) utilizando marcos internacionales como NIST y OWASP. Cuento con una trayectoria híbrida en desarrollo de software y automatizaciones avanzadas con IA, transformando infraestructuras críticas en sistemas eficientes, seguros y escalables.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Pentesting
+                      DevOpSec
                     </Badge>
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Blue Team & Defensive Security
+                      IA y Automatización
                     </Badge>
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Cybersecurity
@@ -414,7 +413,7 @@ export default function Portfolio() {
             </motion.div>
             {/* Certificados debajo, en grid */}
             <div className="w-full flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 w-full max-w-3xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 w-full max-w-4xl">
                 {/* Certificado Cisco */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -472,6 +471,28 @@ export default function Portfolio() {
                       >
                         Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
                       </a>
+                    </div>
+                  </Card>
+                </motion.div>
+                {/* Certificado FortiGate */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
+                    <Image
+                      src="/fortigate-cert.jpg"
+                      alt="FortiGate 7.6 Operator Certificate"
+                      width={60}
+                      height={60}
+                      className="rounded-lg w-[60px] h-[60px]"
+                    />
+                    <div className="text-center mt-2">
+                      <h3 className="text-base font-semibold text-green-400">
+                        FortiGate 7.6 Operator
+                      </h3>
+                      <p className="text-gray-300 text-xs">Fortinet Training Institute</p>
                     </div>
                   </Card>
                 </motion.div>
