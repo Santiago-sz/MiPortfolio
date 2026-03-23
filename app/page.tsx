@@ -78,7 +78,7 @@ export default function Portfolio() {
   }, [])
 
   const skills = {
-    languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "PHP", "SQL"],
+    languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "SQL"],
     frameworks: ["Node.js", "FastAPI", "Playwright", "Docker"],
     databases: ["MySQL", "PostgreSQL", "MongoDB"],
     security: ["Metasploit", "Burp Suite", "Aircrack-ng", "Kali Linux", "Nmap", "Wifite", "Fortinet", "Pila ELK"],
