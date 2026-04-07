@@ -751,7 +751,7 @@ export default function Portfolio() {
                       <Github className="mr-2 h-4 w-4" /> Frontend
                     </motion.a>
                     <motion.a
-                      href="https://github.com/Santiago-sz/PartidoYA-Backend"
+                      href="https://github.com/Nicoargento11/proyecto-cancha-front"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
@@ -759,6 +759,13 @@ export default function Portfolio() {
                     >
                       <Github className="mr-2 h-4 w-4" /> Backend
                     </motion.a>
+                    <motion.a
+                      href="https://github.com/Nicoargento11/partidos-ya-backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
                   </div>
                 </CardContent>
               </Card>
@@ -814,7 +821,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex flex-wrap gap-4 pt-2">
                     <motion.a
-                      href="https://github.com/Santiago-sz/Apuntes-FortiGate"
+                      href="https://github.com/Santiago-sz/Apuntes_Curso_FortiGate_Operator"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
@@ -900,7 +907,7 @@ export default function Portfolio() {
                       Curso Basico <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
                     <motion.a
-                      href="https://www.youtube.com/watch?v=CURSO_AVANZADO"
+                      href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-basico/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
@@ -908,6 +915,13 @@ export default function Portfolio() {
                     >
                       Curso Avanzado <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
+                    <motion.a
+                      href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-avanzado/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
                   </div>
                 </CardContent>
               </Card>
