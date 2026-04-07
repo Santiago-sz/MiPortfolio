@@ -625,7 +625,7 @@ export default function Portfolio() {
             {"<Proyectos />"}
           </motion.h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Proyecto Losas Basquet */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -634,8 +634,7 @@ export default function Portfolio() {
             >
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div>
+                  <div>
                       <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                         <Code className="mr-2 h-5 w-5" />
                         Losas Basquet
@@ -644,13 +643,6 @@ export default function Portfolio() {
                         Plataforma Institucional & Gestion Deportiva
                       </CardDescription>
                     </div>
-                    <Badge
-                      variant="outline"
-                      className="border-green-400 text-green-400 text-xs sm:text-sm self-start"
-                    >
-                      En Produccion
-                    </Badge>
-                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
@@ -702,8 +694,7 @@ export default function Portfolio() {
             >
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div>
+                  <div>
                       <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
                         <Code className="mr-2 h-5 w-5" />
                         Partido YA
@@ -712,13 +703,6 @@ export default function Portfolio() {
                         Sistema de Gestion de Complejos Deportivos
                       </CardDescription>
                     </div>
-                    <Badge
-                      variant="outline"
-                      className="border-blue-400 text-blue-400 text-xs sm:text-sm self-start"
-                    >
-                      En Produccion
-                    </Badge>
-                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
@@ -774,6 +758,69 @@ export default function Portfolio() {
                       whileHover={{ scale: 1.05 }}
                     >
                       <Github className="mr-2 h-4 w-4" /> Backend
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto FortiGate Operator */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        FortiGate Operator
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        Documentacion y Traduccion Tecnica
+                      </CardDescription>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Traduccion integral y sintesis tecnica del curso oficial para la gestion de Firewalls de Proxima Generacion (NGFW). Con el objetivo de profundizar en la administracion de seguridad perimetral, realice la traduccion completa del ingles al espanol y la documentacion tecnica de la interfaz grafica (GUI) de FortiGate.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Capacidades demostradas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Politicas de Firewall
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Perfiles de Seguridad
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        SD-WAN
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        VPNs
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Analisis de Logs
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Valor Agregado:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Creacion de un recurso educativo accesible para la comunidad hispanohablante, facilitando el aprendizaje sobre la implementacion de soluciones Fortinet.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://github.com/Santiago-sz/Apuntes-FortiGate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Repositorio
                     </motion.a>
                   </div>
                 </CardContent>
