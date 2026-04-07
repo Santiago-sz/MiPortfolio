@@ -766,9 +766,7 @@ export default function Portfolio() {
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <Github className="mr-2 h-4 w-4" /> Backend 2
-                    </motion.a>
-                  </div> {/* Cierre de la lista de enlaces */}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -915,15 +913,15 @@ export default function Portfolio() {
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
                       whileHover={{ x: 5 }}
                     >
-                      Curso Avanzado <ExternalLink className="ml-2 h-4 w-4" />
-                    </motion.a>
-                    <motion.a
+                      <motion.a
                       href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-avanzado/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
                       whileHover={{ x: 5 }}
                     >
+                      Certificación Avanzada <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
                   </div>
                 </CardContent>
               </Card>
