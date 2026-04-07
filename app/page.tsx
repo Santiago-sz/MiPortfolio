@@ -192,7 +192,7 @@ export default function Portfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
+              {["Acerca de mí", "Habilidades", "Experiencia", "Proyectos"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -220,7 +220,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, height: 0 }}
             >
               <div className="flex flex-col space-y-4 pt-4">
-                {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
+                {["Acerca de mí", "Habilidades", "Experiencia", "Proyectos"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -609,6 +609,142 @@ export default function Portfolio() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="proyectos" className="pt-24 sm:pt-28 py-12 sm:py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {"<Proyectos />"}
+          </motion.h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Proyecto Losas Basquet */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        Losas Basquet
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        Plataforma de Gestion Deportiva
+                      </CardDescription>
+                    </div>
+                    <Badge
+                      variant="outline"
+                      className="border-green-400 text-green-400 text-xs sm:text-sm self-start"
+                    >
+                      En Produccion
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Una landing page de alto impacto con proyeccion escalable, disenada para una comunidad deportiva activa. Desarrollada inicialmente como una landing page robusta para centralizar la informacion de un club/equipo de basquet. El proyecto fue concebido con una arquitectura preparada para el crecimiento, permitiendo la futura integracion de modulos de estadisticas y gestion de socios.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        React.js
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        PostgreSQL
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Logros:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Implementacion de un diseno profesional que soporta la identidad visual del equipo y una estructura de base de datos optimizada para escalabilidad inmediata.
+                    </p>
+                  </div>
+                  <motion.a
+                    href="https://www.lossabasquet.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                    whileHover={{ x: 5 }}
+                  >
+                    Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                  </motion.a>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto Partido YA */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        Partido YA
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        E-commerce & Gestion de Equipos
+                      </CardDescription>
+                    </div>
+                    <Badge
+                      variant="outline"
+                      className="border-blue-400 text-blue-400 text-xs sm:text-sm self-start"
+                    >
+                      E-commerce
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Plataforma integral orientada a la comercializacion de indumentaria y equipamiento de futbol. Aplicacion web enfocada en el nicho deportivo, disenada para facilitar la venta de equipos de futbol. El sistema gestiona desde la visualizacion de productos hasta la persistencia de datos de ventas y stock.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        React.js (SPA)
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        PostgreSQL
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Enfoque de Ingenieria:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Aplicacion de metodologias agiles en el desarrollo y un modelo de datos relacional que asegura la trazabilidad de cada transaccion.
+                    </p>
+                  </div>
+                  <motion.a
+                    href="https://www.partidoya.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                    whileHover={{ x: 5 }}
+                  >
+                    Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                  </motion.a>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
