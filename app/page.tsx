@@ -192,7 +192,7 @@ export default function Portfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
+              {["Acerca de mí", "Habilidades", "Experiencia", "Proyectos"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -220,7 +220,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, height: 0 }}
             >
               <div className="flex flex-col space-y-4 pt-4">
-                {["Acerca de mí", "Habilidades", "Experiencia"].map((item) => (
+                {["Acerca de mí", "Habilidades", "Experiencia", "Proyectos"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(/\s+/g, "-").replace("ó", "o").replace("í", "i")}`}
@@ -609,6 +609,457 @@ export default function Portfolio() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="proyectos" className="pt-24 sm:pt-28 py-12 sm:py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {"<Proyectos />"}
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Proyecto Losas Basquet */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        Losas Basquet
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        Plataforma Institucional & Gestion Deportiva
+                      </CardDescription>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Desarrollo a medida para un equipo de basquetbol en Andorra, enfocado en eficiencia y escalabilidad. Solucion web disenada para centralizar la presencia digital del club. Se priorizo una arquitectura ligera y profesional, preparada para una futura fase de expansion que incluira un modulo de pagos automatizados para socios.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        React (Vite)
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        NodeMailer
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.lossabasquet.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PageLossa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Repositorio
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto Partido YA */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        Partido YA
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        Sistema de Gestion de Complejos Deportivos
+                      </CardDescription>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Plataforma integral para la reserva de canchas y control de inventario en tiempo real. Aplicacion disenada para digitalizar la operacion de complejos deportivos. Permite a los usuarios visualizar la disponibilidad de canchas en tiempo real y realizar alquileres, mientras que los administradores pueden gestionar el stock de productos y servicios.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Next.js
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Node.js
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Prisma ORM
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        PostgreSQL
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Railway
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.partidoya.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PartidoYA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Frontend
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PartidoYA-Backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Backend
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto FortiGate Operator */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                        <Code className="mr-2 h-5 w-5" />
+                        FortiGate Operator
+                      </CardTitle>
+                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                        Documentacion y Traduccion Tecnica
+                      </CardDescription>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Traduccion integral y sintesis tecnica del curso oficial para la gestion de Firewalls de Proxima Generacion (NGFW). Con el objetivo de profundizar en la administracion de seguridad perimetral, realice la traduccion completa del ingles al espanol y la documentacion tecnica de la interfaz grafica (GUI) de FortiGate.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Capacidades demostradas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Politicas de Firewall
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Perfiles de Seguridad
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        SD-WAN
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        VPNs
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Analisis de Logs
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Valor Agregado:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Creacion de un recurso educativo accesible para la comunidad hispanohablante, facilitando el aprendizaje sobre la implementacion de soluciones Fortinet.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://github.com/Santiago-sz/Apuntes-FortiGate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Repositorio
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto Ciberseguridad UNNE */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Ciberseguridad & Impacto Social
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Programa de Formacion en Ciberseguridad (UNNE)
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Co-creacion de un programa educativo dividido en dos niveles, disenado para capacitar a la comunidad en la prevencion de amenazas digitales y buenas practicas de seguridad informatica. El contenido fue estructurado para ser accesible, gratuito y de alta calidad pedagogica.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Nivel Basico:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2">
+                      Introduccion a la higiene digital, gestion de contrasenas, identificacion de Phishing y proteccion de datos personales.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Higiene Digital
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Phishing
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Proteccion de Datos
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Nivel Avanzado:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2">
+                      Profundizacion en arquitecturas de red seguras, respuesta ante incidentes, analisis de vulnerabilidades y normativas de seguridad.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Redes Seguras
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Respuesta a Incidentes
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Vulnerabilidades
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Impacto:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Un recurso de acceso libre que fortalece la cultura de la seguridad en el ambito academico y civil.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.youtube.com/watch?v=CURSO_BASICO"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Curso Basico <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.youtube.com/watch?v=CURSO_AVANZADO"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Curso Avanzado <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto SIEM Wazuh */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      SIEM Wazuh
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Infraestructura de Seguridad & Monitoreo
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Implementacion de una solucion centralizada para la gestion de eventos de seguridad y cumplimiento. Configuracion y despliegue completo de un servidor Wazuh para el monitoreo de endpoints, con instalacion y vinculacion de agentes en multiples ordenadores.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Capacidades Tecnicas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Hardening de Servidor
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Despliegue de Agentes
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Alertas en Tiempo Real
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        FIM
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Deteccion de Vulnerabilidades
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Politicas de Seguridad
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Funcionalidades:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Recoleccion centralizada de logs, deteccion de vulnerabilidades, monitoreo de integridad de archivos (FIM) y respuesta ante incidentes detectados por el sistema.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://documentation.wazuh.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Documentacion Wazuh <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto DCC - Micro-Certificaciones */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Micro-Certificaciones DCC
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Credenciales Verificables & Self-Sovereign Identity
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Desarrollo y despliegue de una arquitectura distribuida para la emision y verificacion de credenciales academicas inmutables. Como arquitecto y desarrollador del sistema, disene e implemente un entorno basado en el modelo de Self-Sovereign Identity (SSI).
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Implementacion Tecnica:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Ed25519
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        JSON-LD
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Verifiable Credentials
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        W3C Standards
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        DIDs
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Orquestacion & DevOps:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        Docker Compose
+                      </Badge>
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        Nginx
+                      </Badge>
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        PostgreSQL
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Node.js
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://github.com/digitalcredentials"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> DCC Consortium
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
