@@ -641,7 +641,7 @@ export default function Portfolio() {
                         Losas Basquet
                       </CardTitle>
                       <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
-                        Plataforma de Gestion Deportiva
+                        Plataforma Institucional & Gestion Deportiva
                       </CardDescription>
                     </div>
                     <Badge
@@ -654,34 +654,42 @@ export default function Portfolio() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
-                    Una landing page de alto impacto con proyeccion escalable, disenada para una comunidad deportiva activa. Desarrollada inicialmente como una landing page robusta para centralizar la informacion de un club/equipo de basquet. El proyecto fue concebido con una arquitectura preparada para el crecimiento, permitiendo la futura integracion de modulos de estadisticas y gestion de socios.
+                    Desarrollo a medida para un equipo de basquetbol en Andorra, enfocado en eficiencia y escalabilidad. Solucion web disenada para centralizar la presencia digital del club. Se priorizo una arquitectura ligera y profesional, preparada para una futura fase de expansion que incluira un modulo de pagos automatizados para socios.
                   </p>
                   <div>
                     <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
-                        React.js
+                        React (Vite)
                       </Badge>
                       <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
-                        PostgreSQL
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        NodeMailer
                       </Badge>
                     </div>
                   </div>
-                  <div>
-                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Logros:</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">
-                      Implementacion de un diseno profesional que soporta la identidad visual del equipo y una estructura de base de datos optimizada para escalabilidad inmediata.
-                    </p>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.lossabasquet.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PageLossa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Repositorio
+                    </motion.a>
                   </div>
-                  <motion.a
-                    href="https://www.lossabasquet.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
-                    whileHover={{ x: 5 }}
-                  >
-                    Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
-                  </motion.a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -701,47 +709,73 @@ export default function Portfolio() {
                         Partido YA
                       </CardTitle>
                       <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
-                        E-commerce & Gestion de Equipos
+                        Sistema de Gestion de Complejos Deportivos
                       </CardDescription>
                     </div>
                     <Badge
                       variant="outline"
                       className="border-blue-400 text-blue-400 text-xs sm:text-sm self-start"
                     >
-                      E-commerce
+                      En Produccion
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
-                    Plataforma integral orientada a la comercializacion de indumentaria y equipamiento de futbol. Aplicacion web enfocada en el nicho deportivo, disenada para facilitar la venta de equipos de futbol. El sistema gestiona desde la visualizacion de productos hasta la persistencia de datos de ventas y stock.
+                    Plataforma integral para la reserva de canchas y control de inventario en tiempo real. Aplicacion disenada para digitalizar la operacion de complejos deportivos. Permite a los usuarios visualizar la disponibilidad de canchas en tiempo real y realizar alquileres, mientras que los administradores pueden gestionar el stock de productos y servicios.
                   </p>
                   <div>
                     <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
-                        React.js (SPA)
+                        Next.js
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Node.js
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Prisma ORM
                       </Badge>
                       <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
                         PostgreSQL
                       </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Railway
+                      </Badge>
                     </div>
                   </div>
-                  <div>
-                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Enfoque de Ingenieria:</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">
-                      Aplicacion de metodologias agiles en el desarrollo y un modelo de datos relacional que asegura la trazabilidad de cada transaccion.
-                    </p>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.partidoya.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PartidoYA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Frontend
+                    </motion.a>
+                    <motion.a
+                      href="https://github.com/Santiago-sz/PartidoYA-Backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Backend
+                    </motion.a>
                   </div>
-                  <motion.a
-                    href="https://www.partidoya.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
-                    whileHover={{ x: 5 }}
-                  >
-                    Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
-                  </motion.a>
                 </CardContent>
               </Card>
             </motion.div>
