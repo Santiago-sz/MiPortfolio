@@ -625,7 +625,7 @@ export default function Portfolio() {
             {"<Proyectos />"}
           </motion.h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Proyecto Losas Basquet */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -821,6 +821,92 @@ export default function Portfolio() {
                       whileHover={{ scale: 1.05 }}
                     >
                       <Github className="mr-2 h-4 w-4" /> Repositorio
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto Ciberseguridad UNNE */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Ciberseguridad & Impacto Social
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Programa de Formacion en Ciberseguridad (UNNE)
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Co-creacion de un programa educativo dividido en dos niveles, disenado para capacitar a la comunidad en la prevencion de amenazas digitales y buenas practicas de seguridad informatica. El contenido fue estructurado para ser accesible, gratuito y de alta calidad pedagogica.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Nivel Basico:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2">
+                      Introduccion a la higiene digital, gestion de contrasenas, identificacion de Phishing y proteccion de datos personales.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Higiene Digital
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Phishing
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Proteccion de Datos
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Nivel Avanzado:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2">
+                      Profundizacion en arquitecturas de red seguras, respuesta ante incidentes, analisis de vulnerabilidades y normativas de seguridad.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Redes Seguras
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Respuesta a Incidentes
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Vulnerabilidades
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Impacto:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Un recurso de acceso libre que fortalece la cultura de la seguridad en el ambito academico y civil.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://www.youtube.com/watch?v=CURSO_BASICO"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Curso Basico <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.youtube.com/watch?v=CURSO_AVANZADO"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Curso Avanzado <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
                   </div>
                 </CardContent>
