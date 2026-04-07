@@ -766,7 +766,9 @@ export default function Portfolio() {
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
                       whileHover={{ scale: 1.05 }}
                     >
-                  </div>
+                      <Github className="mr-2 h-4 w-4" /> Backend 2
+                    </motion.a>
+                  </div> {/* Cierre de la lista de enlaces */}
                 </CardContent>
               </Card>
             </motion.div>
