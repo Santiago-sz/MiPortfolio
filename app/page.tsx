@@ -625,7 +625,7 @@ export default function Portfolio() {
             {"<Proyectos />"}
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Proyecto Losas Basquet */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -907,6 +907,72 @@ export default function Portfolio() {
                       whileHover={{ x: 5 }}
                     >
                       Curso Avanzado <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Proyecto SIEM Wazuh */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      SIEM Wazuh
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Infraestructura de Seguridad & Monitoreo
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Implementacion de una solucion centralizada para la gestion de eventos de seguridad y cumplimiento. Configuracion y despliegue completo de un servidor Wazuh para el monitoreo de endpoints, con instalacion y vinculacion de agentes en multiples ordenadores.
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Capacidades Tecnicas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Hardening de Servidor
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Despliegue de Agentes
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Alertas en Tiempo Real
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        FIM
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Deteccion de Vulnerabilidades
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Politicas de Seguridad
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Funcionalidades:</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      Recoleccion centralizada de logs, deteccion de vulnerabilidades, monitoreo de integridad de archivos (FIM) y respuesta ante incidentes detectados por el sistema.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://documentation.wazuh.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                      whileHover={{ x: 5 }}
+                    >
+                      Documentacion Wazuh <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
                   </div>
                 </CardContent>
