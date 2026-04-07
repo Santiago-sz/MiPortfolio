@@ -978,6 +978,88 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            {/* Proyecto DCC - Micro-Certificaciones */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
+                <CardHeader>
+                  <div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Micro-Certificaciones DCC
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Credenciales Verificables & Self-Sovereign Identity
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    Desarrollo y despliegue de una arquitectura distribuida para la emision y verificacion de credenciales academicas inmutables. Como arquitecto y desarrollador del sistema, disene e implemente un entorno basado en el modelo de Self-Sovereign Identity (SSI).
+                  </p>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Implementacion Tecnica:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Ed25519
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        JSON-LD
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Verifiable Credentials
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        W3C Standards
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        DIDs
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Orquestacion & DevOps:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        Docker Compose
+                      </Badge>
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        Nginx
+                      </Badge>
+                      <Badge variant="outline" className="border-blue-400/50 text-blue-400 text-xs">
+                        PostgreSQL
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-semibold mb-2 text-sm">Stack Tecnologico:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        TypeScript
+                      </Badge>
+                      <Badge variant="outline" className="border-green-400/50 text-green-400 text-xs">
+                        Node.js
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <motion.a
+                      href="https://github.com/digitalcredentials"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Github className="mr-2 h-4 w-4" /> DCC Consortium
+                    </motion.a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
