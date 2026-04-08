@@ -742,22 +742,13 @@ export default function Portfolio() {
                       Ver Proyecto <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
                     <motion.a
-                      href="https://github.com/Santiago-sz/PartidoYA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <Github className="mr-2 h-4 w-4" /> Frontend
-                    </motion.a>
-                    <motion.a
                       href="https://github.com/Nicoargento11/proyecto-cancha-front"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <Github className="mr-2 h-4 w-4" /> Backend
+                      <Github className="mr-2 h-4 w-4" /> Front
                     </motion.a>
                     <motion.a
                       href="https://github.com/Nicoargento11/partidos-ya-backend"
@@ -766,6 +757,8 @@ export default function Portfolio() {
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
                       whileHover={{ scale: 1.05 }}
                     >
+                      <Github className="mr-2 h-4 w-4" /> Back
+                    </motion.a>
                   </div>
                 </CardContent>
               </Card>
@@ -898,22 +891,15 @@ export default function Portfolio() {
                   </div>
                   <div className="flex flex-wrap gap-4 pt-2">
                     <motion.a
-                      href="https://www.youtube.com/watch?v=CURSO_BASICO"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
-                      whileHover={{ x: 5 }}
-                    >
-                      Curso Basico <ExternalLink className="ml-2 h-4 w-4" />
-                    </motion.a>
-                    <motion.a
                       href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-basico/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
                       whileHover={{ x: 5 }}
                     >
-                      <motion.a
+                      Certificación Básica <ExternalLink className="ml-2 h-4 w-4" />
+                    </motion.a>
+                    <motion.a
                       href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-avanzado/"
                       target="_blank"
                       rel="noopener noreferrer"
