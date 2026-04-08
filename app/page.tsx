@@ -635,14 +635,14 @@ export default function Portfolio() {
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
                 <CardHeader>
                   <div>
-                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                        <Code className="mr-2 h-5 w-5" />
-                        Losas Basquet
-                      </CardTitle>
-                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
-                        Plataforma Institucional & Gestion Deportiva
-                      </CardDescription>
-                    </div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Losas Basquet
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Plataforma Institucional & Gestion Deportiva
+                    </CardDescription>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
@@ -695,14 +695,14 @@ export default function Portfolio() {
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
                 <CardHeader>
                   <div>
-                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                        <Code className="mr-2 h-5 w-5" />
-                        Partido YA
-                      </CardTitle>
-                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
-                        Sistema de Gestion de Complejos Deportivos
-                      </CardDescription>
-                    </div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      Partido YA
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Sistema de Gestion de Complejos Deportivos
+                    </CardDescription>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
@@ -757,8 +757,6 @@ export default function Portfolio() {
                       className="inline-flex items-center text-gray-400 hover:text-gray-300 transition-colors text-sm border border-gray-600 rounded-md px-3 py-1 hover:border-gray-400"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <Github className="mr-2 h-4 w-4" /> Back
-                    </motion.a>
                   </div>
                 </CardContent>
               </Card>
@@ -773,14 +771,14 @@ export default function Portfolio() {
               <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm h-full hover:border-green-400 transition-all duration-300">
                 <CardHeader>
                   <div>
-                      <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
-                        <Code className="mr-2 h-5 w-5" />
-                        FortiGate Operator
-                      </CardTitle>
-                      <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
-                        Documentacion y Traduccion Tecnica
-                      </CardDescription>
-                    </div>
+                    <CardTitle className="text-green-400 flex items-center text-lg sm:text-xl">
+                      <Code className="mr-2 h-5 w-5" />
+                      FortiGate Operator
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 mt-1 text-sm sm:text-base">
+                      Documentacion y Traduccion Tecnica
+                    </CardDescription>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-300 text-sm sm:text-base">
@@ -900,14 +898,21 @@ export default function Portfolio() {
                       Certificación Básica <ExternalLink className="ml-2 h-4 w-4" />
                     </motion.a>
                     <motion.a
-                      href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-avanzado/"
+                      href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-basico/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
                       whileHover={{ x: 5 }}
                     >
-                      Certificación Avanzada <ExternalLink className="ml-2 h-4 w-4" />
-                    </motion.a>
+                      <motion.a
+                        href="https://virtual.unne.edu.ar/SIED-UV/cursos/programa-de-formacion-en-ciberseguridad-nivel-avanzado/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm"
+                        whileHover={{ x: 5 }}
+                      >
+                        Certificación Avanzada <ExternalLink className="ml-2 h-4 w-4" />
+                      </motion.a>
                   </div>
                 </CardContent>
               </Card>
