@@ -25,6 +25,22 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
+import Script from "next/script"
+
+const credlyBadges = [
+  { id: "f44e2ed2-57f0-45df-8e94-340210e5411a", name: "Introduction to Cybersecurity" },
+  { id: "dc843dfa-c7bd-4772-96d6-a82d1c7a1731", name: "Ethical Hacker" },
+  { id: "660f29f2-dbea-4944-8c33-89d6762b18d6", name: "ISC2 Candidate" },
+  { id: "f154692d-7264-4a7c-bd76-131b5115d9f8", name: "Fortinet FortiGate 7.6 Operator" },
+  { id: "eb1e31aa-2fee-460a-a185-fb6dee6095f8", name: "Fortinet Certified Fundamentals Cybersecurity" },
+  { id: "85f78c06-65a3-4820-b1da-9c82162f9d38", name: "Fortinet Certified Associate Cybersecurity" },
+  { id: "428ae2f4-5b6c-4885-9440-2893e868e112", name: "Fortinet NSE 3 Certified in Cybersecurity" },
+  { id: "61247276-bb8f-4ef7-a34f-da450d06622e", name: "Fortinet NSE 2 Certified in Cybersecurity" },
+  { id: "6bb466f7-52f0-4e82-a92d-b458d121e52d", name: "Fortinet NSE 1 Certified in Cybersecurity" },
+  { id: "fcc03a63-4588-4989-b2a2-31c97cac5c65", name: "Technical Introduction to Cybersecurity 3.0" },
+  { id: "eff36975-13a0-4da2-b3ea-dca127c7b225", name: "Getting Started in Cybersecurity 3.0" },
+  { id: "a0faba30-de9f-4626-80fb-c3264b6e5cdd", name: "Introduction to the Threat Landscape 3.0" },
+]
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -411,93 +427,28 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             </motion.div>
-            {/* Certificados debajo, en grid */}
+            {/* Insignias de Credly (widget oficial, auto-verificado) */}
             <div className="w-full flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 w-full max-w-4xl">
-                {/* Certificado Cisco */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
-                    <Image
-                      src="/cisco-cert.png"
-                      alt="Cisco Introduction to Cybersecurity Certificate"
-                      width={60}
-                      height={60}
-                      className="rounded-lg w-[60px] h-[60px]"
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 w-full max-w-5xl place-items-center">
+                {credlyBadges.map((badge, index) => (
+                  <motion.div
+                    key={badge.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.05 }}
+                  >
+                    <div
+                      data-iframe-width="150"
+                      data-iframe-height="270"
+                      data-share-badge-id={badge.id}
+                      data-share-badge-host="https://www.credly.com"
+                      title={badge.name}
                     />
-                    <div className="text-center mt-2">
-                      <h3 className="text-base font-semibold text-green-400">
-                        Introduction to Cybersecurity
-                      </h3>
-                      <p className="text-gray-300 text-xs">Cisco Networking Academy</p>
-                      <a
-                        href="https://www.credly.com/badges/f44e2ed2-57f0-45df-8e94-340210e5411a/public_url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-green-400 hover:text-green-300 flex items-center justify-center mt-1 text-xs"
-                      >
-                        Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
-                      </a>
-                    </div>
-                  </Card>
-                </motion.div>
-                {/* Certificado Ethical Hacker */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
-                    <Image
-                      src="/ethical-hacker.png"
-                      alt="Ethical Hacker Certificate"
-                      width={60}
-                      height={60}
-                      className="rounded-lg w-[60px] h-[60px]"
-                    />
-                    <div className="text-center mt-2">
-                      <h3 className="text-base font-semibold text-green-400">
-                        Ethical Hacker
-                      </h3>
-                      <p className="text-gray-300 text-xs">Cisco Networking Academy</p>
-                      <a
-                        href="https://www.credly.com/badges/dc843dfa-c7bd-4772-96d6-a82d1c7a1731/public_url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-green-400 hover:text-green-300 flex items-center justify-center mt-1 text-xs"
-                      >
-                        Ver Certificado <ExternalLink className="ml-1 h-4 w-4" />
-                      </a>
-                    </div>
-                  </Card>
-                </motion.div>
-                {/* Certificado FortiGate */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <Card className="bg-gray-900/50 border-green-400/30 backdrop-blur-sm w-full max-w-xs mx-auto flex flex-col items-center p-4">
-                    <Image
-                      src="/fortigate-cert.jpg"
-                      alt="FortiGate 7.6 Operator Certificate"
-                      width={60}
-                      height={60}
-                      className="rounded-lg w-[60px] h-[60px]"
-                    />
-                    <div className="text-center mt-2">
-                      <h3 className="text-base font-semibold text-green-400">
-                        FortiGate 7.6 Operator
-                      </h3>
-                      <p className="text-gray-300 text-xs">Fortinet Training Institute</p>
-                    </div>
-                  </Card>
-                </motion.div>
+                  </motion.div>
+                ))}
               </div>
             </div>
+            <Script src="https://cdn.credly.com/assets/utilities/embed.js" strategy="lazyOnload" />
           </div>
         </div>
       </section>
