@@ -420,9 +420,6 @@ export default function Portfolio() {
                     <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
                       Cybersecurity
                     </Badge>
-                    <Badge variant="outline" className="border-green-400 text-green-400 text-xs sm:text-sm">
-                      Project Management
-                    </Badge>
                   </div>
                 </CardContent>
               </Card>
