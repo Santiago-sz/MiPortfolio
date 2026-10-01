@@ -312,7 +312,7 @@ export default function Portfolio() {
                 variant="outline"
                 className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black w-full sm:w-auto"
               >
-                <a href="/SUAREZ JORGE SANTIAGO.pdf" download>
+                <a href="/CV_Jorge_Santiago_Suarez.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Descargar CV
                 </a>
